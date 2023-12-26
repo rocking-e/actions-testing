@@ -1,0 +1,25 @@
+---
+name: Lambda Responder
+
+on:
+    workflow_dispatch:
+        inputs:
+            design:
+                description: Name of the design
+
+jobs:
+    explore:
+        name: Explore inputs
+        runs-on: default
+
+        steps:
+            - name: Check Out Repository
+              uses: actions/checkout@v3
+              with:
+                    fetch-depth: 0
+            - name: Environment
+              shell: bash
+              run: |
+                echo "Environment"
+                env | sort
+                
