@@ -10,7 +10,7 @@ on:
 jobs:
     explore:
         name: Explore inputs
-        runs-on: default
+        runs-on: ubuntu-latest
 
         steps:
             - name: Check Out Repository
@@ -22,4 +22,3 @@ jobs:
               run: |
                 echo "Environment"
                 env | sort
-                
