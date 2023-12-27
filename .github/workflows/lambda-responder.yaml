@@ -8,6 +8,10 @@ on:
                 description: Name of the design
             payload:
                 description: The JSON as a string payload from flightcenter
+                default: ""
+
+env:
+    PAYLOAD_JSON: ${{ github.event.inputs.payload }}
 
 jobs:
     explore:
@@ -30,3 +34,9 @@ jobs:
               run: |
                 echo "Environment"
                 env | sort
+            - name: show payload as JSON
+              shell: bash
+              run: |
+                echo "payload as json via jq"
+                echo "$PAYLOAD_JSON | jq ."
+                
