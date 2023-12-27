@@ -1,0 +1,2 @@
+foo:
+	echo do nothing

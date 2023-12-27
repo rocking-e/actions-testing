@@ -6,6 +6,8 @@ on:
         inputs:
             design:
                 description: Name of the design
+            payload:
+                description: The JSON as a string payload from flightcenter
 
 jobs:
     explore:
@@ -17,6 +19,12 @@ jobs:
               uses: actions/checkout@v3
               with:
                     fetch-depth: 0
+
+            - name: Show Inputs
+              shell: bash
+              run: |
+                echo input design = ${{ inputs.design }}
+                echo input payload = ${{ inputs.payload }}
             - name: Environment
               shell: bash
               run: |
