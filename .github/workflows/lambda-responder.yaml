@@ -38,5 +38,4 @@ jobs:
               shell: bash
               run: |
                 echo "payload as json via jq"
-                echo "$PAYLOAD_JSON | jq ."
-                
+                echo "$PAYLOAD_JSON" | jq .
